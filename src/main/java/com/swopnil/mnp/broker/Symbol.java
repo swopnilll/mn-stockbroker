@@ -1,16 +1,20 @@
 package com.swopnil.mnp.broker;
 
 public class Symbol {
-    String Symbol;
+    String symbol   ;
+
+    public Symbol(){
+
+    };
 
     public Symbol(String symbol) {
-        Symbol = symbol;
+        this.symbol = symbol;
     }
 
     public String getSymbol() {
-        return Symbol;
+        return this.symbol;
     }
     public void setSymbol(String symbol) {
-        Symbol = symbol;
+        this.symbol = symbol;
     }
 }
