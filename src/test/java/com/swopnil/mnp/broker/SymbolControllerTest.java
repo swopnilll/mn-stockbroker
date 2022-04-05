@@ -49,4 +49,15 @@ class SymbolControllerTest {
 
    }
 
+   @Test
+   void symbolsEndPointReturnsListOfSymbolsTakingQueryParameter(){
+    var response = client.toBlocking().exchange("/filter?max=5", JsonNode.class);
+    assertEquals(HttpStatus.OK, response.getStatus());
+    assertEquals(5, response.getBody().get().size());
+
+       var response2 = client.toBlocking().exchange("/filter?max=5&offset=2", JsonNode.class);
+       assertEquals(HttpStatus.OK, response2.getStatus());
+       assertEquals(5, response2.getBody().get().size());
+   }
+
 }
